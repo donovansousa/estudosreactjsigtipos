@@ -1,0 +1,29 @@
+
+-> O que é o Material-UI?
+Material-UI é uma biblioteca de componentes para construção de interfaces baseada no padrão de Material Design da Google.
+
+-> Instalando o modulo NPM:
+npm install @material-ui/core --save
+
+-> Além de instalar os modulos NPM, devemos incluir a folha de estilo e fonte no  index.html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+-> Usando o Material-UI
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+
+function App() {
+ return <Button color="primary">Hello World</Button>;
+}
+
+const useStyles = makeStyles({
+ customClass: {
+ color: "red",
+ },
+});
+
+function App() {
+ const classes = useStyles();
+ return <Button className={classes.customClass}>Hello World</Button>;
+}

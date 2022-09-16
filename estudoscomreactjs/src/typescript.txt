@@ -1,0 +1,62 @@
+
+Aula de typescript - 2022-7A - MBA - Bootcamp Desenvolvedor(a) React
+
+Typescript é uma extensão da linguagem, ou um superset da linguagem.
+
+-> Vantagens:
+- Verificação de erros em tempo de compilação
+- Maior facilidade para manter o código
+- Melhor suporte ferramental (autocomplete)
+
+-> Alguns tipos primitivos:
+number
+boolean
+string
+undefined
+number[]
+string[]
+any
+never
+void
+
+const numero: number = 1;
+
+-> Interfaces
+interface IAluno {
+ matricula: number,
+ nome: string,
+ dataNascimento?: string // campo opcional
+}
+
+const aluno: IAluno = {
+    nome: "Donovan",
+    matricula: 123456
+}
+
+-> A palavra chave type define um novo tipo
+
+type DirecionamentoTipo = "direita" | "esquerda";
+let meuDirecionamento: DirecionamentoTipo = "direita";
+
+Também podemos usar a interseção
+interface Programador {
+    linguagemFavorita: string;
+}
+
+let alunoProgramador: Aluno & Programador {
+    matricula: 123,
+    nome: "Donovan",
+    linguagemFavorita: "Javascript"
+}
+
+-> Funções - Podemos definir tipos para funções
+type OperadorNumerico = (n1: number, n2: number) => number; // cria a abstração da função
+const opDivisao: OperadorNumerico = (n1, n2) => n1 / n2; // faz a implementação
+console.log( opDivisao(10, 10)); // executa a função
+
+-> Tipos com parametros
+function retornar<T>(valor: T): T {
+    return valor;
+}
+
+console.log(retornar<string>("donovan"));
